@@ -8,9 +8,12 @@ export const productsApi = createApi({
         getAllProducts: builder.query({
             query: () => 'products',
         }),
+        getProduct: builder.query({
+            query: (product) => `products/search?q=${product}`,
+        }),
     }),
 });
 
 // creates a hook for all of the endpoints defined in the api object
 // prefix with use, followed by the name of the endpoint because it's a hook
-export const { useGetAllProductsQuery } = productsApi;
+export const { useGetAllProductsQuery, useGetProductQuery } = productsApi;

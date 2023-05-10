@@ -1,10 +1,12 @@
-import { useGetAllProductsQuery } from "../features/apiSlice";
+import { useGetAllProductsQuery, useGetProductQuery } from "../features/apiSlice";
 
 export const Data = () => {
 
-    const { data } = useGetAllProductsQuery();
+    const { productsArr } = useGetAllProductsQuery();
+    const { singleProduct } = useGetProductQuery("iphone");
 
-    console.log(data);
+    console.log(productsArr);
+    console.log(singleProduct);
 
 
 
